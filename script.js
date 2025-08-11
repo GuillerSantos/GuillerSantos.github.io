@@ -1,4 +1,3 @@
-// menu toggle
 const menuBtn = document.getElementById('menuBtn');
 const nav = document.getElementById('nav');
 
@@ -6,33 +5,39 @@ menuBtn.addEventListener('click', () => {
   nav.classList.toggle('open');
 });
 
-// smooth scroll for internal links
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const target = document.querySelector(link.getAttribute('href'));
+document.addEventListener('click', (e) => {
+  if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
+    nav.classList.remove('open');
+  }
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      if (nav.classList.contains('open')) nav.classList.remove('open');
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+      nav.classList.remove('open');
     }
   });
 });
 
-// reveal on scroll
-const reveals = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      io.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, observerOptions);
 
-reveals.forEach(r => io.observe(r));
-
-// reduce motion preference
-const preferReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (preferReduced) {
-  reveals.forEach(r => r.classList.add('visible'));
-}
+document.querySelectorAll('.reveal').forEach(el => {
+  observer.observe(el);
+});
