@@ -1,97 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guiller Santos | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guiller Santos — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="container nav-container">
-      <div class="logo">Guiller Santos</div>
-      <nav>
-        <a href="#home">Home</a>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">Guiller Santos</div>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <nav class="nav" id="nav">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
+        <a href="#stack">Tech</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Guiller Santos</h1>
-      <p>Software Developer | .NET | Blazor | SQL Server</p>
-      <a href="#projects" class="btn">View My Work</a>
-    </div>
-  </section>
+  <main id="content" class="main">
+    <div class="wrap layout">
+      <aside class="panel profile">
+        <img class="avatar" src="https://github.com/GuillerSantos.png" alt="Guiller Santos avatar">
+        <h1 class="name">Guiller Santos</h1>
+        <p class="role">Software Developer</p>
 
-  <section id="about" class="section">
-    <div class="container narrow">
-      <h2>About</h2>
-      <p>
-        I am a software developer experienced in C#, ASP.NET Core, Blazor, and Microsoft SQL Server.
-        I follow clean architecture and OOP principles, focusing on scalable and maintainable solutions.
-      </p>
-    </div>
-  </section>
-
-  <section id="projects" class="section">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>POS Manga Management System</h3>
-          <p>Inventory and sales management system for manga products.</p>
-          <a href="https://github.com/GuillerSantos" target="_blank">View Project</a>
+        <div class="actions">
+          <a class="btn" href="https://github.com/GuillerSantos" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/guiller-santos-b762ab314/" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
-        <div class="card">
-          <h3>Tricycle Fare and Passenger Management</h3>
-          <p>System to manage fares and passenger records for tricycles.</p>
-          <a href="https://github.com/GuillerSantos" target="_blank">View Project</a>
+
+        <section class="card contact-card">
+          <h3>Contact</h3>
+          <p class="muted">Reach via LinkedIn or GitHub.</p>
+          <div class="meta-row">
+            <div><span class="meta-label">Location</span><span>Philippines</span></div>
+            <div><span class="meta-label">Focus</span><span>.NET, Blazor, SQL</span></div>
+          </div>
+        </section>
+
+        <section class="card stack-brief">
+          <h3>Tech Stack</h3>
+          <div class="chips">
+            <span>C#</span><span>ASP.NET Core</span><span>Blazor</span><span>SQL Server</span>
+            <span>EF Core</span><span>HTML</span><span>CSS</span><span>JS</span>
+          </div>
+        </section>
+      </aside>
+
+      <section class="content-area">
+        <div class="grid-two">
+          <div class="card about-card reveal">
+            <h2>About</h2>
+            <p>I build maintainable systems using OOP and clean architecture. I work with C#, ASP.NET Core, Blazor, and SQL Server. I focus on readable code and reliable design.</p>
+            <p>Explore projects and repo links for live demos and source.</p>
+          </div>
+
+          <div class="card experience-card reveal">
+            <h2>Experience</h2>
+            <ul class="timeline">
+              <li><strong>Software Developer</strong><span> — Various projects</span></li>
+              <li><strong>POS and Management Systems</strong><span> — School and retail apps</span></li>
+              <li><strong>Capstone Projects</strong><span> — Academic and freelance</span></li>
+            </ul>
+          </div>
         </div>
-        <div class="card">
-          <h3>School Management System</h3>
-          <p>Advanced web application for school operations.</p>
-          <a href="https://github.com/GuillerSantos" target="_blank">View Project</a>
+
+        <div class="card projects-card reveal" id="projects">
+          <div class="card-head">
+            <h2>Recent Projects</h2>
+            <a class="view-all" href="https://github.com/GuillerSantos" target="_blank" rel="noreferrer">View on GitHub</a>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project">
+              <h3>POS Manga Management System</h3>
+              <p>Inventory, cart, and receipt system built with WinForms and SQL Server.</p>
+              <a href="https://github.com/GuillerSantos/PosoManagementSystem" target="_blank" rel="noreferrer">Repo</a>
+            </article>
+
+            <article class="project">
+              <h3>TricycleFareAndPassengerManagement</h3>
+              <p>Fare calculator and passenger records app.</p>
+              <a href="https://github.com/GuillerSantos/TricycleFareAndPassengerManagement" target="_blank" rel="noreferrer">Repo</a>
+            </article>
+
+            <article class="project">
+              <h3>ApartmentBookingManagementSystem</h3>
+              <p>Booking and reservation prototype.</p>
+              <a href="https://github.com/GuillerSantos/ApartmentBookingManagementSystem" target="_blank" rel="noreferrer">Repo</a>
+            </article>
+
+            <article class="project">
+              <h3>NotesTakingSystem</h3>
+              <p>Simple notes app with CRUD operations.</p>
+              <a href="https://github.com/GuillerSantos/NotesTakingSystem" target="_blank" rel="noreferrer">Repo</a>
+            </article>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="skills" class="section">
-    <div class="container">
-      <h2>Skills</h2>
-      <div class="grid skills-grid">
-        <span>C#</span>
-        <span>ASP.NET Core</span>
-        <span>Blazor</span>
-        <span>SQL Server</span>
-        <span>Entity Framework</span>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>MongoDB</span>
-      </div>
-    </div>
-  </section>
+        <div class="card stack-card reveal" id="stack">
+          <h2>Skills and Tools</h2>
+          <div class="tools-grid">
+            <div class="tool">C#</div>
+            <div class="tool">ASP.NET Core</div>
+            <div class="tool">Blazor</div>
+            <div class="tool">SQL Server</div>
+            <div class="tool">Entity Framework</div>
+            <div class="tool">HTML</div>
+            <div class="tool">CSS</div>
+            <div class="tool">JavaScript</div>
+            <div class="tool">MongoDB</div>
+          </div>
+        </div>
 
-  <section id="contact" class="section">
-    <div class="container narrow">
-      <h2>Contact</h2>
-      <p>Email me via LinkedIn or check my GitHub for collaboration opportunities.</p>
-      <a href="https://www.linkedin.com/in/guiller-santos-b762ab314/" target="_blank" class="btn">LinkedIn</a>
-      <a href="https://github.com/GuillerSantos" target="_blank" class="btn">GitHub</a>
-    </div>
-  </section>
+        <div class="card contact-panel reveal" id="contact">
+          <h2>Contact</h2>
+          <p>Email via LinkedIn inbox or create an issue on a repo for collaboration request.</p>
+          <div class="contact-actions">
+            <a class="btn" href="https://www.linkedin.com/in/guiller-santos-b762ab314/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn ghost" href="https://github.com/GuillerSantos" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
 
-  <footer>
-    <div class="container">
-      <p>© 2025 Guiller Santos</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>© 2025 Guiller Santos</div>
+      <div class="small-links"><a href="https://github.com/GuillerSantos" target="_blank" rel="noreferrer">GitHub</a></div>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
